@@ -1,26 +1,23 @@
 import { useState } from 'react'
-import './App.css'
+import './index.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        
-      </div>
-      <h1>Vite + React</h1>
+      <h1>Counter-app</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button className="btn btn-increase" onClick={() => setCount((count) => count + 1)}>
+          Incrementa + 1: <span className="counter-value">{count}</span>
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <button className="btn btn-decrease" onClick={() => setCount((count) => count - 1)}>
+          Decrementa - 1
+        </button>
+        <button className="btn btn-reset" onClick={() => setCount(0)}>
+          Resetea contador a 0
+        </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
